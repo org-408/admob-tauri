@@ -43,6 +43,14 @@ to the target's architecture with `lipo -thin` and links it into the crate as a 
 into the app's `staticlib` (and links into its `cdylib`). It also links the system frameworks the SDKs document. An
 app needs no Xcode configuration. If a future SDK version adds a framework, it is picked up automatically.
 
+## iOS: Xcode 27 or later
+
+CI on Xcode 26.6 (GitHub's `macos-26` image) failed with `no such module 'GoogleMobileAds'`: swift-rs runs
+`swift build --arch arm64 -Xswiftc -sdk ... -Xswiftc -target ...` there, which resolves the package's binary
+dependencies for the macOS host, where the iOS-only xcframeworks have no slice. On Xcode 27 swift-rs passes
+`--triple` instead and it works (the example runs on the iOS 27 simulator). Not tried: Xcode 26 with a different
+build path (for example building the package with `xcodebuild`); a contribution here would widen the support.
+
 ## Pitfalls met
 
 - iOS 15 deployment target: set `IPHONEOS_DEPLOYMENT_TARGET=15.0` when building the example outside Xcode.
