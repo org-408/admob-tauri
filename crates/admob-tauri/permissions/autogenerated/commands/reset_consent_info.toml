@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-reset-consent-info"
+description = "Enables the reset_consent_info command without any pre-configured scope."
+commands.allow = ["reset_consent_info"]
+
+[[permission]]
+identifier = "deny-reset-consent-info"
+description = "Denies the reset_consent_info command without any pre-configured scope."
+commands.deny = ["reset_consent_info"]

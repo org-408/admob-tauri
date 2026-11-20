@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-show-reward-video-ad"
+description = "Enables the show_reward_video_ad command without any pre-configured scope."
+commands.allow = ["show_reward_video_ad"]
+
+[[permission]]
+identifier = "deny-show-reward-video-ad"
+description = "Denies the show_reward_video_ad command without any pre-configured scope."
+commands.deny = ["show_reward_video_ad"]

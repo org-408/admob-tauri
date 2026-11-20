@@ -1,0 +1,12 @@
+{
+  // Type-checks the tests and the tester app (the package builds with its own tsconfig.json)
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
+    "verbatimModuleSyntax": false,
+    "types": ["node", "vite/client"]
+  },
+  "include": ["__tests__", "examples/admob-tester/src", "vitest.config.ts"]
+}

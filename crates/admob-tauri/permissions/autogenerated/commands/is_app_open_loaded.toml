@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-is-app-open-loaded"
+description = "Enables the is_app_open_loaded command without any pre-configured scope."
+commands.allow = ["is_app_open_loaded"]
+
+[[permission]]
+identifier = "deny-is-app-open-loaded"
+description = "Denies the is_app_open_loaded command without any pre-configured scope."
+commands.deny = ["is_app_open_loaded"]
