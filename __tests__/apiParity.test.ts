@@ -87,7 +87,8 @@ describe('admob-tauri has every method of @capacitor-community/admob', () => {
 
   it('lists each command for the permissions, and allows every one by default', () => {
     const build = read(`${crate}/build.rs`);
-    const listed = all(build.slice(build.indexOf('const COMMANDS')), /"(\w+)",/g);
+    const start = build.indexOf('const COMMANDS');
+    const listed = all(build.slice(start, build.indexOf('];', start)), /"(\w+)",/g);
     expect(sorted(listed)).toEqual(sorted([...commands, ...LISTENER_COMMANDS]));
     const allowed = all(read(`${crate}/permissions/default.toml`), /"allow-([\w-]+)"/g);
     expect(allowed).toEqual(listed.map((c) => c.replaceAll('_', '-')));
