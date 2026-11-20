@@ -9,4 +9,5 @@ export * from './consent/index.js';
 export * from './shared/index.js';
 export * from './app-open/index.js';
 export * from './native-ads/index.js';
+export type { PluginListenerHandle } from './capacitor.js';
 export { AdMob };

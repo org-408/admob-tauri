@@ -68,10 +68,7 @@ export interface BannerDefinitions {
    * @param listenerFunc
    * @since 3.0.0
    */
-  addListener(
-    eventName: BannerAdPluginEvents.Loaded,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: BannerAdPluginEvents.Loaded, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for banner ad load failures.
@@ -94,10 +91,7 @@ export interface BannerDefinitions {
    * @param listenerFunc
    * @since 3.0.0
    */
-  addListener(
-    eventName: BannerAdPluginEvents.Opened,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: BannerAdPluginEvents.Opened, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for banner overlay closed events.
@@ -107,10 +101,7 @@ export interface BannerDefinitions {
    * @param listenerFunc
    * @since 3.0.0
    */
-  addListener(
-    eventName: BannerAdPluginEvents.Closed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: BannerAdPluginEvents.Closed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for banner impression events.
@@ -120,10 +111,7 @@ export interface BannerDefinitions {
    * @param listenerFunc
    * @since 3.0.0
    */
-  addListener(
-    eventName: BannerAdPluginEvents.AdImpression,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: BannerAdPluginEvents.AdImpression, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for banner impression-level ad revenue events.

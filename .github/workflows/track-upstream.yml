@@ -1,0 +1,55 @@
+name: Track upstream
+
+# Follows @capacitor-community/admob (docs/UPSTREAM.md). Every day, if upstream released a version we do not track,
+# this opens a PR that moves the pins (scripts/track-upstream.mjs): the version the parity test reads, and the
+# Google Mobile Ads SDK / User Messaging Platform versions upstream pins. If upstream's API or native code changed,
+# the parity test fails on that PR and the port is done by hand on its branch.
+#
+# A PR opened with GITHUB_TOKEN does not start CI. So this workflow starts CI on the branch itself
+# (`workflow_dispatch` is the one event GITHUB_TOKEN may trigger); the run shows on the branch's commit. With a
+# `TRACK_UPSTREAM_TOKEN` secret (a fine-grained token with contents and pull requests write) the PR gets CI as usual.
+on:
+  schedule:
+    - cron: '0 0 * * *' # 9:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Move the pins to the latest upstream release
+        env:
+          GH_TOKEN: ${{ secrets.TRACK_UPSTREAM_TOKEN || github.token }}
+        shell: bash
+        run: |
+          out=$(node scripts/track-upstream.mjs)
+          echo "$out"
+          latest=$(echo "$out" | sed -n '1s/.*-> //p')
+          if echo "$out" | grep -q '^up to date'; then exit 0; fi
+          branch="chore/upstream-$latest"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then echo "$branch exists"; exit 0; fi
+          node scripts/track-upstream.mjs --apply >/dev/null
+          npm install --package-lock-only --ignore-scripts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git commit -am "chore(deps): follow @capacitor-community/admob $latest"
+          git push origin "$branch"
+          body="Moves the pins to upstream [$latest](https://github.com/capacitor-community/admob/releases/tag/v$latest):
+
+          \`\`\`
+          $out
+          \`\`\`
+
+          If the parity test (\`__tests__/apiParity.test.ts\`) fails, upstream added or removed an API or an event: port it on this branch (docs/UPSTREAM.md). Compare with \`git diff v<previous>..v$latest -- src ios android\` in the upstream repository."
+          gh pr create --base develop --head "$branch" --title "chore(deps): follow @capacitor-community/admob $latest" --body "$body"
+          gh workflow run ci.yml --ref "$branch"

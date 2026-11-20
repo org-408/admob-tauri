@@ -2,9 +2,9 @@
  *  For more information:
  *  https://developers.google.com/admob/ios/banner#banner_sizes
  *  https://developers.google.com/android/reference/com/google/android/gms/ads/AdSize
- * 
+ *
  * */
- export enum BannerAdSize {
+export enum BannerAdSize {
   /**
    * Mobile Marketing Association (MMA)
    * banner ad size (320x50 density-independent pixels).
@@ -26,7 +26,7 @@
    * Interactive Advertising Bureau (IAB)
    * medium rectangle ad size (300x250 density-independent pixels).
    */
-   MEDIUM_RECTANGLE = 'MEDIUM_RECTANGLE',
+  MEDIUM_RECTANGLE = 'MEDIUM_RECTANGLE',
 
   /**
    * Interactive Advertising Bureau (IAB)
@@ -37,14 +37,13 @@
   /**
    * A dynamically sized banner that is full-width and auto-height.
    */
-   ADAPTIVE_BANNER = 'ADAPTIVE_BANNER',
-  
-   /**
-    * A legacy smart banner sized to the screen width.
-    * Retained for compatibility; use `ADAPTIVE_BANNER` for new integrations.
-    *
-    * @deprecated Use `ADAPTIVE_BANNER` instead.
-    */
-   SMART_BANNER = 'SMART_BANNER',
+  ADAPTIVE_BANNER = 'ADAPTIVE_BANNER',
 
+  /**
+   * A legacy smart banner sized to the screen width.
+   * Retained for compatibility; use `ADAPTIVE_BANNER` for new integrations.
+   *
+   * @deprecated Use `ADAPTIVE_BANNER` instead.
+   */
+  SMART_BANNER = 'SMART_BANNER',
 }

@@ -3,7 +3,7 @@
  *
  * @see https://developers.google.com/admob/android/reference/com/google/android/gms/ads/AdError
  */
- export interface AdMobError {
+export interface AdMobError {
   /**
    * Gets the error's code.
    */

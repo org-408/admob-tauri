@@ -5,7 +5,10 @@
   "description": "admob-tauri: @capacitor-community/admob ported to Tauri 2",
   "license": "MIT",
   "type": "module",
-  "workspaces": ["crates/admob-tauri"],
+  "workspaces": [
+    "crates/admob-tauri",
+    "examples/admob-tester"
+  ],
   "scripts": {
     "build": "npm run build -w admob-tauri",
     "typecheck": "tsc -p tsconfig.json --noEmit",

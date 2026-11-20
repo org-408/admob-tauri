@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         .package(name: "Tauri", path: "../.tauri/tauri-api"),
         // The native SDKs, as @capacitor-community/admob uses them (renovate.json keeps them in step with upstream)
-        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.6.0"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", exact: "13.11.0"),
         .package(url: "https://github.com/googleads/swift-package-manager-google-user-messaging-platform.git", .upToNextMinor(from: "3.1.0")),
     ],
     targets: [

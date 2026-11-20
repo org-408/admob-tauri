@@ -1,7 +1,11 @@
 import type { PluginListenerHandle } from '../capacitor.js';
 
 import type { NativeAdEvent, NativeAdErrorEvent, NativeAdRevenueEvent } from './native-ad-event.interface.js';
-import type { NativeAdCommandIdentity, NativeAdFeedSession, NativeAdLoadOptions } from './native-ad-options.interface.js';
+import type {
+  NativeAdCommandIdentity,
+  NativeAdFeedSession,
+  NativeAdLoadOptions,
+} from './native-ad-options.interface.js';
 import type { NativeAdPlacementBatch } from './native-ad-placement.interface.js';
 import type { NativeAdPluginEvents } from './native-ad-plugin-events.enum.js';
 

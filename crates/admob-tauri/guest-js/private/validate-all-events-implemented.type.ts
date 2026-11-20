@@ -4,10 +4,7 @@ type Contra<T> = (x: T) => void;
 type UnwrapContra<T> = [T] extends [Contra<infer S>] ? S : never;
 type UnionToIntersection<U> = UnwrapContra<U extends any ? Contra<U> : never>;
 
-type Overload<T> = (
-  eventName: T,
-  listenerFunc: (...args: any[]) => any,
-) => Promise<PluginListenerHandle>;
+type Overload<T> = (eventName: T, listenerFunc: (...args: any[]) => any) => Promise<PluginListenerHandle>;
 type OverloadUnionForEnum<T> = T extends any ? Overload<T> : never;
 
 type OverloadUnion<T> = OverloadUnionForEnum<T>;

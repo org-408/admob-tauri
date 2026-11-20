@@ -1,7 +1,7 @@
 /**
  * @see https://developer.android.com/reference/android/widget/LinearLayout#attr_android:gravity
  */
- export enum BannerAdPosition {
+export enum BannerAdPosition {
   /**
    * Positions the banner at the top center of the screen.
    */

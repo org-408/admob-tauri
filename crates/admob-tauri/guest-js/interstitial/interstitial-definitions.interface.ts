@@ -65,10 +65,7 @@ export interface InterstitialDefinitions {
   /**
    * Listens for interstitial ad shown events.
    */
-  addListener(
-    eventName: InterstitialAdPluginEvents.Showed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: InterstitialAdPluginEvents.Showed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for interstitial impression-level ad revenue events.

@@ -19,7 +19,7 @@ export enum InterstitialAdPluginEvents {
   /**
    * Emits when an interstitial ad is dismissed.
    */
-  Dismissed= 'interstitialAdDismissed',
+  Dismissed = 'interstitialAdDismissed',
   /**
    * Emits impression-level ad revenue data when a paid event is recorded.
    */

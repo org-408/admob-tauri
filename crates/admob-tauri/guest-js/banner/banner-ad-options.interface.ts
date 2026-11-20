@@ -15,13 +15,13 @@ export interface BannerAdOptions extends AdOptions {
    * @default ADAPTIVE_BANNER
    * @since 3.0.0
    */
-   adSize?: BannerAdSize;
+  adSize?: BannerAdSize;
 
-   /**
-    * The position where the banner is displayed.
-    *
-    * @default TOP_CENTER
-    * @since 1.1.2
-    */
-   position?: BannerAdPosition;
+  /**
+   * The position where the banner is displayed.
+   *
+   * @default TOP_CENTER
+   * @since 1.1.2
+   */
+  position?: BannerAdPosition;
 }

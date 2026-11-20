@@ -81,10 +81,7 @@ export interface RewardDefinitions {
   /**
    * Listens for rewarded ad shown events.
    */
-  addListener(
-    eventName: RewardAdPluginEvents.Showed,
-    listenerFunc: () => void,
-  ): Promise<PluginListenerHandle>;
+  addListener(eventName: RewardAdPluginEvents.Showed, listenerFunc: () => void): Promise<PluginListenerHandle>;
 
   /**
    * Listens for rewarded impression-level ad revenue events.

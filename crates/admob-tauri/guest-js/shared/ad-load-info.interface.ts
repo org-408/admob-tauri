@@ -5,5 +5,5 @@ export interface AdLoadInfo {
   /**
    * The ad unit ID of the loaded ad.
    */
-  adUnitId: string
+  adUnitId: string;
 }

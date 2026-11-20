@@ -26,11 +26,11 @@ export enum RewardAdPluginEvents {
    * This event does not indicate whether the user earned a reward. Listen for
    * `Rewarded` separately before granting the reward.
    */
-  Dismissed= 'onRewardedVideoAdDismissed',
+  Dismissed = 'onRewardedVideoAdDismissed',
   /**
    * Emits when the user earns the advertised reward.
    */
-  Rewarded= 'onRewardedVideoAdReward',
+  Rewarded = 'onRewardedVideoAdReward',
   /**
    * Emits impression-level ad revenue data when a paid event is recorded.
    */

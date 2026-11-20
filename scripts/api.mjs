@@ -4,8 +4,9 @@ import { readFileSync } from 'node:fs';
 
 /** The methods of `export interface <name> {` in a definitions.ts or .d.ts, in order (at the members' indentation) */
 export function interfaceMethods(source, name) {
-  const start = source.indexOf(`export interface ${name} {`);
-  if (start < 0) throw new Error(`interface ${name} not found`);
+  const match = new RegExp(`export interface ${name}(?: extends [^{]+)? \\{`).exec(source);
+  if (!match) throw new Error(`interface ${name} not found`);
+  const start = match.index;
   const body = source.slice(start, source.indexOf('\n}', start));
   const members = [...body.matchAll(/^( +)([a-zA-Z]+)\??\(/gm)];
   const indent = Math.min(...members.map((m) => m[1].length));
