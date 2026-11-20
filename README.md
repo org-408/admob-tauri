@@ -59,6 +59,8 @@ tauri::Builder::default().plugin(admob_tauri::init())
 ### iOS
 
 - iOS 15.0 or later (`bundle.iOS.minimumSystemVersion`).
+- **Xcode 27 or later** to build. The Google SDKs are binary frameworks, and with Xcode 26.6 the plugin's Swift package fails to
+  build (`no such module 'GoogleMobileAds'`: swift-rs builds it for the macOS host there). Tested with Xcode 27.
 - `src-tauri/Info.ios.plist` needs your AdMob app ID, the SKAdNetwork identifiers and the tracking message
   ([Google's guide](https://developers.google.com/admob/ios/quick-start)):
 
