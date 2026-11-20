@@ -1,0 +1,24 @@
+[workspace]
+resolver = "2"
+members = ["crates/admob-tauri"]
+exclude = ["examples/admob-tester/src-tauri"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT"
+authors = ["org-408"]
+repository = "https://github.com/org-408/admob-tauri"
+homepage = "https://github.com/org-408/admob-tauri"
+keywords = ["tauri", "tauri-plugin", "admob", "ads", "google-mobile-ads"]
+categories = ["api-bindings"]
+# Planned for crates.io, not published yet (docs/WORKFLOW.md)
+publish = false
+
+[workspace.dependencies]
+serde = "1"
+serde_json = "1"
+thiserror = "2"
+tauri = "2.12"
+tauri-plugin = { version = "2.7", features = ["build"] }

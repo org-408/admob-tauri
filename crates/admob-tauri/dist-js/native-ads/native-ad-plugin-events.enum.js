@@ -1,0 +1,10 @@
+export var NativeAdPluginEvents;
+(function (NativeAdPluginEvents) {
+    NativeAdPluginEvents["Loaded"] = "nativeAdLoaded";
+    NativeAdPluginEvents["FailedToLoad"] = "nativeAdFailedToLoad";
+    NativeAdPluginEvents["Clicked"] = "nativeAdClicked";
+    NativeAdPluginEvents["AdImpression"] = "nativeAdImpression";
+    NativeAdPluginEvents["Opened"] = "nativeAdOpened";
+    NativeAdPluginEvents["Closed"] = "nativeAdClosed";
+    NativeAdPluginEvents["AdPaid"] = "nativeAdPaid";
+})(NativeAdPluginEvents || (NativeAdPluginEvents = {}));

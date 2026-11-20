@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-prepare-native-ad-snapshot"
+description = "Enables the prepare_native_ad_snapshot command without any pre-configured scope."
+commands.allow = ["prepare_native_ad_snapshot"]
+
+[[permission]]
+identifier = "deny-prepare-native-ad-snapshot"
+description = "Denies the prepare_native_ad_snapshot command without any pre-configured scope."
+commands.deny = ["prepare_native_ad_snapshot"]

@@ -1,0 +1,31 @@
+{
+  "name": "admob-tauri-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "admob-tauri: @capacitor-community/admob ported to Tauri 2",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "crates/admob-tauri",
+    "examples/admob-tester"
+  ],
+  "scripts": {
+    "build": "npm run build -w admob-tauri",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run format:check && npm run build && npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@capacitor-community/admob": "8.3.0",
+    "@capacitor/core": "^8.0.0",
+    "@tauri-apps/api": "^2.12.4",
+    "@tauri-apps/cli": "^2.12.4",
+    "@types/node": "^24.10.1",
+    "prettier": "^3.6.2",
+    "typescript": "^6.0.3",
+    "vite": "^8.3.8",
+    "vitest": "^5.0.5"
+  }
+}

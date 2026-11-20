@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-tracking-authorization-status"
+description = "Enables the tracking_authorization_status command without any pre-configured scope."
+commands.allow = ["tracking_authorization_status"]
+
+[[permission]]
+identifier = "deny-tracking-authorization-status"
+description = "Denies the tracking_authorization_status command without any pre-configured scope."
+commands.deny = ["tracking_authorization_status"]

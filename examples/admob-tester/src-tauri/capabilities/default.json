@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The tester's window: every command of the plugin",
+  "windows": ["main"],
+  "permissions": ["core:default", "admob-tauri:default"]
+}
