@@ -27,7 +27,7 @@ const TEST = {
     appOpen: 'ca-app-pub-3940256099942544/9257395921',
   },
 };
-const isIOS = /iPhone|iPad/.test(navigator.userAgent);
+const isIOS = (globalThis as { __ADMOB_TAURI__?: { platform?: string } }).__ADMOB_TAURI__?.platform === 'ios';
 const ids = isIOS ? TEST.ios : TEST.android;
 
 const $ = (id: string) => document.getElementById(id)!;
@@ -109,7 +109,9 @@ async function run(name: string, fn: () => Promise<unknown>) {
     log(`✗ ${name} ${detail}`);
   }
   const failed = results.filter((r) => !r.ok).length;
-  $('summary').textContent = `${results.length - failed} ok, ${failed} failed`;
+  const last = results[results.length - 1]!;
+  $('summary').textContent =
+    `${results.length - failed} ok, ${failed} failed. Last: ${last.step} ${last.detail.slice(0, 90)}`;
   $('summary').className = failed ? 'fail' : 'ok';
 }
 

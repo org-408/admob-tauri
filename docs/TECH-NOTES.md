@@ -33,6 +33,16 @@ Decisions of the port and what differs from the Capacitor plugin.
 - Android Java and Kotlin keep upstream's package (`com.getcapacitor.community.admob`) so diffs against upstream stay
   small; the Tauri plugin class is `com.org408.admob.tauri.AdmobPlugin`.
 
+## iOS: the Google SDKs are binary frameworks
+
+The Google Mobile Ads SDK and the User Messaging Platform are `xcframework` binary targets of Swift Package Manager.
+The plugin's static library only names them, and an app links its Rust code as one static library (`libapp.a`) that
+Xcode then links, so without help the final link fails with `Undefined symbols: _GADAdSizeBanner ...`. `build.rs`
+(`link_ios_frameworks`) therefore takes each framework's static archive from SwiftPM's `artifacts/` folder, cuts it
+to the target's architecture with `lipo -thin` and links it into the crate as a static library, which Cargo bundles
+into the app's `staticlib` (and links into its `cdylib`). It also links the system frameworks the SDKs document. An
+app needs no Xcode configuration. If a future SDK version adds a framework, it is picked up automatically.
+
 ## Pitfalls met
 
 - iOS 15 deployment target: set `IPHONEOS_DEPLOYMENT_TARGET=15.0` when building the example outside Xcode.

@@ -53,6 +53,14 @@
     <div id="buttons"></div>
     <div id="events"></div>
     <div id="log"></div>
+    <script>
+      // Shows an error that stops the page (a webview has no console on a phone)
+      const show = (message) => (document.getElementById('log').textContent += `error: ${message}\n`);
+      window.addEventListener('error', (e) => show(e.message));
+      window.addEventListener('unhandledrejection', (e) =>
+        show(String(e.reason && e.reason.message ? e.reason.message : e.reason)),
+      );
+    </script>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
