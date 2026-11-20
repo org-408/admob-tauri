@@ -1,0 +1,16 @@
+{
+  "kit": {
+    "repo": "org-408/workflow-kit",
+    "commit": "349b747"
+  },
+  "profiles": [
+    "common"
+  ],
+  "files": {
+    ".github/ISSUE_TEMPLATE/decision.md": "36accf92a38394d7"
+  },
+  "packageJsonScripts": {},
+  "skip": [
+    ".github/pull_request_template.md"
+  ]
+}
