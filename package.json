@@ -1,6 +1,6 @@
 {
   "name": "admob-tauri-workspace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "admob-tauri: @capacitor-community/admob ported to Tauri 2",
   "license": "MIT",

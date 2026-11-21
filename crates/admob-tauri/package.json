@@ -1,6 +1,6 @@
 {
   "name": "admob-tauri",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Google AdMob for Tauri 2 on iOS and Android: a port of @capacitor-community/admob",
   "license": "MIT",
   "author": "org-408",
