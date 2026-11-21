@@ -5,7 +5,7 @@
 - 作業の流れは [docs/WORKFLOW.md](docs/WORKFLOW.md) に従う
 
 ## 今の位置づけ
-- v0.1.0 に向けて移植中（Issue #1）。crates.io・npm への公開はユーザーの確認を取ってから
+- v0.1.1 まで tag 済み（Issue #1）。**いずれ crates.io・npm に `admob-tauri` で公開する計画**（[docs/ROADMAP.md](docs/ROADMAP.md)）。公開の実行はユーザーの確認を取ってから
 
 ## 決まり
 - 統合点は `develop`。ブランチは `feature/T<Issue番号>-<説明>`。tag は `v<版>`
