@@ -7,7 +7,7 @@ names, arguments, results and events), so an app moving from Capacitor to Tauri 
 Banner, interstitial, rewarded, rewarded interstitial and app open ads, native ads, the Google UMP consent flow
 (including the privacy options form) and iOS App Tracking Transparency.
 
-Status: **v0.1.0, not published to crates.io / npm yet.** Use it from git for now (see [Install](#install)).
+Status: **v0.1.1, not published to crates.io / npm yet.** Use it from git for now (see [Install](#install)).
 
 This is an independent community project. It is not affiliated with or endorsed by Google, the Tauri Programme or the
 Capacitor Community. It is not an official Tauri plugin.
@@ -34,11 +34,11 @@ Not on crates.io / npm yet. Until then, from git:
 ```toml
 # src-tauri/Cargo.toml
 [dependencies]
-admob-tauri = { git = "https://github.com/org-408/admob-tauri", tag = "v0.1.0" }
+admob-tauri = { git = "https://github.com/org-408/admob-tauri", tag = "v0.1.1" }
 ```
 
 ```sh
-npm install github:org-408/admob-tauri#v0.1.0   # TypeScript API (the package is in crates/admob-tauri)
+npm install github:org-408/admob-tauri#v0.1.1   # TypeScript API (the package is in crates/admob-tauri)
 ```
 
 Register the plugin and allow its commands:
