@@ -18,7 +18,7 @@
     "verify": "npm run format:check && npm run build && npm run typecheck && npm test"
   },
   "devDependencies": {
-    "@capacitor-community/admob": "8.3.0",
+    "@capacitor-community/admob": "8.4.2",
     "@capacitor/core": "^8.0.0",
     "@tauri-apps/api": "^2.12.4",
     "@tauri-apps/cli": "^2.12.4",

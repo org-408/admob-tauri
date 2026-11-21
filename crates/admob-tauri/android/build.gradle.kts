@@ -40,7 +40,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.webkit:webkit:1.12.1")
     // Places the native ad over the page (native ads), as @capacitor-community/admob does
-    implementation("io.github.webview-native-ui:engine:1.0.0")
+    implementation("io.github.webview-native-ui:engine:[1.0.10,2.0.0)")
 
     testImplementation("org.mockito:mockito-inline:5.2.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.15.2")
