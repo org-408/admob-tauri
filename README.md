@@ -9,6 +9,10 @@ Banner, interstitial, rewarded, rewarded interstitial and app open ads, native a
 
 Status: **v0.1.1, not published to crates.io / npm yet.** Use it from git for now (see [Install](#install)).
 
+**Plan:** the intent is to publish `admob-tauri` to crates.io and npm. Before that, the Android side still has to be run on
+an emulator or device, and the consent form, ATT prompt, rewarded and native ads checked on real devices. Until then
+the plugin is a pre-release. See [Status and roadmap](docs/ROADMAP.md).
+
 This is an independent community project. It is not affiliated with or endorsed by Google, the Tauri Programme or the
 Capacitor Community. It is not an official Tauri plugin.
 
